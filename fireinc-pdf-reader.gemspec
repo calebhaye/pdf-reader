@@ -1,8 +1,8 @@
 # RSpec files aren't included, as they depend on the PDF files,
 # which will make the gem filesize irritatingly large
 Gem::Specification.new do |spec|
-  spec.name = "pdf-reader"
-  spec.version = "0.11.0.alpha"
+  spec.name = "fireinc-pdf-reader"
+  spec.version = "0.11.0"
   spec.summary = "A library for accessing the content of PDF files"
   spec.description = "The PDF::Reader library implements a PDF parser conforming as much as possible to the PDF specification from Adobe"
   spec.files =  Dir.glob("{examples,lib}/**/**/*") + ["Rakefile"]
@@ -13,9 +13,9 @@ Gem::Specification.new do |spec|
   spec.extra_rdoc_files = %w{README.rdoc TODO CHANGELOG MIT-LICENSE }
   spec.rdoc_options << '--title' << 'PDF::Reader Documentation' <<
                        '--main'  << 'README.rdoc' << '-q'
-  spec.authors = ["James Healy"]
-  spec.email   = ["jimmy@deefa.com"]
-  spec.homepage = "http://github.com/yob/pdf-reader"
+  spec.authors = ["Caleb Adam Haye","James Healy"]
+  spec.email   = ["caleb@fire.coop","jimmy@deefa.com"]
+  spec.homepage = "http://github.com/calebhaye/pdf-reader"
   spec.required_ruby_version = ">=1.8.7"
 
   spec.add_development_dependency("rake")
@@ -23,24 +23,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("rspec", "~>2.1")
 
   spec.add_dependency('Ascii85', '~> 1.0.0')
-
-  spec.post_install_message = <<END_DESC
-
-  ********************************************
-
-  This is an alpha release of PDF::Reader to gather feedback on the proposed
-  API changes.
-
-  The old API is marked as deprecated but will continue to work with no
-  visible warnings for now.
-
-  The new API is documented in the README and in rdoc for the PDF::Reader,
-  PDF::Reader::Page and PDF::Reader::ObjectHash classes.
-
-  Do not use this in production, stick to stable releases for that. If you do
-  take the new API for a spin, please send any feedback my way.
-
-  ********************************************
-
-END_DESC
 end
